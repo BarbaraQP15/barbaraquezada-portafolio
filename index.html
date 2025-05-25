@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Barbara Quezada's Portafolio</title>
+    <link rel="icon" href="./assets/arrow.png" type="image/png">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
+    <!-- Agregar botón de traducción -->
+    <div class="language-switch">
+      <button class="language-btn active-lang" onclick="changeLanguage('en')">EN</button>
+      <span>|</span>
+      <button class="language-btn" onclick="changeLanguage('es')">ES</button>
+    </div>
+        
     <nav id="desktop-nav">
-      <div class="logo">John Doe</div>
+      <div class="logo">Barbara Quezada</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -21,7 +29,7 @@
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo">John Doe</div>
+      <div class="logo">Barbara Quezada</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -38,12 +46,12 @@
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
+        <img src="./assets/profile-barb.jpg" alt="Barbara Quezada profile picture" />
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">John Doe</h1>
-        <p class="section__text__p2">Frontend Developer</p>
+        <h1 class="title">Barbara Quezada</h1>
+        <p class="section__text__p2">Software Engineering Student | Project Leader</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -60,13 +68,13 @@
             src="./assets/linkedin.png"
             alt="My LinkedIn profile"
             class="icon"
-            onclick="location.href='https://linkedin.com/'"
+            onclick="location.href='linkedin.com/in/barbara-quezada-a516942a4'"
           />
           <img
             src="./assets/github.png"
             alt="My Github profile"
             class="icon"
-            onclick="location.href='https://github.com/'"
+            onclick="location.href='https://github.com/BarbaraQP15'"
           />
         </div>
       </div>
@@ -77,7 +85,7 @@
       <div class="section-container">
         <div class="section__pic-container">
           <img
-            src="./assets/about-pic.png"
+            src="./assets/about-pic2.png"
             alt="Profile picture"
             class="about-pic"
           />
@@ -91,7 +99,11 @@
                 class="icon"
               />
               <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
+              <p>
+                - Led 3+ years software development teams in university projects<br />
+                - 2+ years applied Scrum methodology in real-world applications<br />
+                - 1 year of experience in web and mobile application development
+              </p>
             </div>
             <div class="details-container">
               <img
@@ -100,17 +112,22 @@
                 class="icon"
               />
               <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
+              <p>
+                - B.Sc. Software Engineering - Universidad Peruana de Ciencias Aplicadas<br />
+                - English Program - Asociación Cultural Peruano Británica (Británico)<br />
+                - Certificada en Power BI y Scrum Methodologies (Zegel)
+              </p>
             </div>
           </div>
           <div class="text-container">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
+            I am a software engineering student with a passion for technology, 
+            problem-solving, and project leadership. My experience includes both frontend 
+            development and backend technologies like Spring Boot 
+            and Vue. I excel at professional organization, proficiently using tools such 
+            as Trello and Notion, and implementing Scrum methodologies to effectively 
+            manage projects and teams. My combined technical skills and leadership 
+            abilities allow me to successfully guide projects from conception to completion.
             </p>
           </div>
         </div>
@@ -128,16 +145,12 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
+            <h2 class="experience-sub-title">Tools & Technologies</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>HTML</h3>
+                  <h3>Spring Boot</h3>
                   <p>Experienced</p>
                 </div>
               </article>
@@ -148,7 +161,7 @@
                   class="icon"
                 />
                 <div>
-                  <h3>CSS</h3>
+                  <h3>Java & C#</h3>
                   <p>Experienced</p>
                 </div>
               </article>
@@ -159,8 +172,8 @@
                   class="icon"
                 />
                 <div>
-                  <h3>SASS</h3>
-                  <p>Intermediate</p>
+                  <h3>HTML & CSS</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
@@ -170,8 +183,8 @@
                   class="icon"
                 />
                 <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
+                  <h3>Vue.js</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
@@ -181,8 +194,20 @@
                   class="icon"
                 />
                 <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
+                  <h3>Android Studio</h3>
+                  <p>Experienced</p>
+                </div>
+                <div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Power BI</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
@@ -192,14 +217,14 @@
                   class="icon"
                 />
                 <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
+                  <h3>Figma & Trello</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
+            <h2 class="experience-sub-title">Certifications</h2>
             <div class="article-container">
               <article>
                 <img
@@ -208,8 +233,28 @@
                   class="icon"
                 />
                 <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
+                  <h3>Scrum Methodologies</h3>
+                  <p>Zegel</p>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Power BI Analyst</h3>
+                  <p>Zegel</p>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>English Program</h3>
+                  <p>Británico</p>
                 </div>
               </article>
               <article>
@@ -219,8 +264,8 @@
                   class="icon"
                 />
                 <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
+                  <h3>IT Security: Defense against the digital dark arts</h3>
+                  <p>Google</p>
                 </div>
               </article>
               <article>
@@ -230,19 +275,8 @@
                   class="icon"
                 />
                 <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
+                  <h3>Leading People and Teams</h3>
+                  <p>Universidad de Michigan / Coursera</p>
                 </div>
               </article>
             </div>
@@ -264,22 +298,26 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-1.png"
+                src="./assets/rectify.jpg"
                 alt="Project 1"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
+            <h2 class="experience-sub-title project-title">Recetify</h2>
+            <p class="project-description">
+              Aplicación de e-commerce de recetas con carrito de compras y gestión de ingredientes.
+            </p>
             <div class="btn-container">
               <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                class="btn btn-color-3 project-btn"
+                onclick="location.href='https://github.com/orgs/recetify/repositories'"
+
               >
                 Github
               </button>
               <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                class="btn btn-color-4 project-btn"
+                onclick="location.href='https://www.figma.com/proto/Y8ueXO10nJGijXvD7BGuWp/Recitify-S.O?node-id=29-2&t=72vZg5jVysfs893d-1'"
               >
                 Live Demo
               </button>
@@ -288,22 +326,25 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-2.png"
+                src="./assets/aventurape.png"
                 alt="Project 2"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <h2 class="experience-sub-title project-title">AventuraPe</h2>
+            <p class="project-description">
+              App móvil con sistema de geolocalización que conecta aventureros y emprendedores locales.
+            </p>
             <div class="btn-container">
               <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                class="btn btn-color-3 project-btn"
+                onclick="location.href='https://github.com/AventuraPe-AndroidSoftware'"
               >
                 Github
               </button>
               <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                class="btn btn-color-4 project-btn"
+                onclick="location.href='https://www.figma.com/proto/XnZ4CmnkLFbmhpGQej7d7W/AventuraPe?node-id=0-1&t=sMyFTk0sk2qBovlM-1'"
               >
                 Live Demo
               </button>
@@ -312,22 +353,25 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-3.png"
+                src="./assets/tavolo.jpeg"
                 alt="Project 3"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <h2 class="experience-sub-title project-title">Tavolo</h2>
+            <p class="project-description">
+              Aplicación de gestión de reservas y pedidos para restaurantes con dispositivos IOT.
+            </p>
             <div class="btn-container">
               <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                class="btn btn-color-3 project-btn"
+                onclick="location.href='https://github.com/orgs/upc-pre-202510-1asi0572-2952-tavolo/repositories'"
               >
                 Github
               </button>
               <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                class="btn btn-color-4 project-btn"
+                onclick="location.href='https://www.figma.com/proto/Tb4ZzF1YPdJ0t2uLpwLMhG/TAVOLO?node-id=9-297&starting-point-node-id=9%3A297&t=SxIlGDThHR1d8XcO-1'"
               >
                 Live Demo
               </button>
@@ -352,7 +396,7 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+          <p><a href="mailto:examplemail@gmail.com">barbaraquezadaqp@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img
@@ -360,7 +404,7 @@
             alt="LinkedIn icon"
             class="icon contact-icon"
           />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+          <p><a href="linkedin.com/in/barbara-quezada-a516942a4">LinkedIn</a></p>
         </div>
       </div>
     </section>
@@ -375,7 +419,7 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
+      <p>Copyright &#169; 2025 Barbara Quezada. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
   </body>

@@ -230,7 +230,9 @@ section {
 }
 
 .btn-color-1,
-.btn-color-2 {
+.btn-color-2,
+.btn-color-3,
+.btn-color-4 {
   border: rgb(53, 53, 53) 0.1rem solid;
 }
 
@@ -241,7 +243,7 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: rgb(53, 53, 53);
+  background: rgb(66, 66, 66);
   color: white;
 }
 
@@ -251,6 +253,16 @@ section {
 
 .btn-color-2 {
   background: none;
+}
+
+.btn-color-3:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+.btn-color-4:hover {
+  background: rgb(0, 0, 0);
+  color: white;
 }
 
 .btn-color-2:hover {
@@ -324,6 +336,11 @@ section {
   color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.project-description {
+  font-size: 1.25rem;
   margin-bottom: 2rem;
 }
 
@@ -430,3 +447,93 @@ footer {
 footer p {
   text-align: center;
 }
+
+    .language-switch {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 5px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .language-switch:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+      
+      .language-btn {
+        background: none;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #555;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .language-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #147efb, #2eadfe);
+        border-radius: 25px;
+        opacity: 0;
+        z-index: -1;
+        transform: scale(0.8);
+        transition: all 0.3s ease;
+      }
+      
+      .language-btn.active-lang {
+        color: white;
+      }
+      
+      .language-btn.active-lang::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+      
+      .language-btn:hover:not(.active-lang) {
+        color: #147efb;
+      }
+      
+      .language-divider {
+        width: 1px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: 0 2px;
+      }
+      
+      .language-switch .language-icon {
+        margin-right: 8px;
+        font-size: 16px;
+        color: #555;
+      }
+      
+      @media (max-width: 768px) {
+        .language-switch {
+          top: 10px;
+          right: 10px;
+        }
+        
+        .language-btn {
+          padding: 6px 10px;
+          font-size: 12px;
+        }
+      }
