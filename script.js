@@ -213,3 +213,95 @@ function changeLanguage(lang) {
       'Reservation and order management application for restaurants with IoT devices.';
   }
 }
+
+// Reemplaza la sección de animación existente con este código
+
+// Animación de texto con scroll infinito verdadero
+document.addEventListener('DOMContentLoaded', function() {
+  // Seleccionar los elementos
+  const leftRow = document.querySelector('.text-running-way-left .text-row');
+  const rightRow = document.querySelector('.text-running-way-right .text-row');
+  
+  if (!leftRow || !rightRow) return;
+  
+  // Duplicar el contenido para crear un efecto infinito
+  function setupInfiniteScroll(container) {
+    const content = container.querySelector('.single-services-list');
+    if (!content) return;
+    
+    // Crear múltiples clones para asegurar que cubra la pantalla
+    const contentWidth = content.offsetWidth;
+    const requiredCopies = Math.ceil((window.innerWidth * 2) / contentWidth) + 1;
+    
+    // Clonar el contenido varias veces
+    for (let i = 0; i < requiredCopies; i++) {
+      container.appendChild(content.cloneNode(true));
+    }
+    
+    return contentWidth;
+  }
+  
+  // Configurar ambas filas
+  const leftItemWidth = setupInfiniteScroll(leftRow);
+  const rightItemWidth = setupInfiniteScroll(rightRow);
+  
+  // Crear animaciones CSS en lugar de usar JavaScript para la animación
+  // Esto evita cualquier salto o reinicio visible
+function createAnimation(element, direction, width, duration) {
+  // Eliminar animaciones anteriores
+  element.style.animation = 'none';
+  element.offsetHeight; // Forzar un reflow
+  
+  // Usamos nombres únicos para cada animación para evitar conflictos
+  const animationName = direction === 'left' ? 'scrollLeft' : 'scrollRight';
+  
+  // Definir la dirección correcta del movimiento
+  const translateDirection = direction === 'left' ? -width : -width; // Ambas se mueven hacia la izquierda
+  
+  const keyframeName = `@keyframes ${animationName} { 
+    from { transform: translateX(0); } 
+    to { transform: translateX(${translateDirection}px); }
+  }`;
+  
+  // Crear stylesheet para las keyframes
+  if (!document.querySelector(`style[data-animation="${animationName}"]`)) {
+    const styleSheet = document.createElement('style');
+    styleSheet.setAttribute('data-animation', animationName);
+    styleSheet.textContent = keyframeName;
+    document.head.appendChild(styleSheet);
+  }
+  
+  // Aplicar la animación
+  element.style.animation = `${animationName} ${duration}s linear infinite`;
+}
+
+// Velocidades de animación (segundos para completar un ciclo)
+const leftDuration = 25; // Ajustar según necesidad
+const rightDuration = 25; // Más lento para crear contraste visual
+
+// Iniciar animaciones - ahora ambas se mueven hacia la izquierda pero a diferentes velocidades
+createAnimation(leftRow, 'left', leftItemWidth, leftDuration);
+createAnimation(rightRow, 'left', rightItemWidth, rightDuration);
+  // Ajustar animaciones cuando cambia el tamaño de la ventana
+  window.addEventListener('resize', function() {
+    // Recalcular y reconfigurar las animaciones
+    createAnimation(leftRow, 'left', leftItemWidth * 2, leftDuration);
+    createAnimation(rightRow, 'right', rightItemWidth * 2, rightDuration);
+  });
+  
+  // Pausa/reanuda animaciones cuando la sección no está visible
+  // para mejorar el rendimiento
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const targetRow = entry.target;
+      if (entry.isIntersecting) {
+        targetRow.style.animationPlayState = 'running';
+      } else {
+        targetRow.style.animationPlayState = 'paused';
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  observer.observe(leftRow);
+  observer.observe(rightRow);
+});
